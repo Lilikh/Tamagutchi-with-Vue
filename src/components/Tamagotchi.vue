@@ -17,7 +17,7 @@
       <button @click="feed">Feed</button>
       <button @click="play">Play</button>
     </div>
-    <button>Reset</button>
+    <button @click="reset">Reset</button>
   </div>
 </template>
 

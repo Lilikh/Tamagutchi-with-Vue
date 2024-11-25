@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Tamagotchi Vue Projekt
 
 Tamagotchi-spel byggt med Vue 3 och Composition API. Spelet simulerar ett virtuellt husdjur som du kan mata, leka med och återställa. Husdjurets humör ändras baserat på dess hunger- och lyckonivåer.
@@ -75,3 +76,7 @@ Detta projekt är licensierat under MIT-licensen. Se LICENSE filen för detaljer
 ---
 
 Känn dig fri att lägga till fler uppgifter eller ändra de befintliga efter behov. Denna lista bör hjälpa till att vägleda utvecklingsprocessen och säkerställa att alla nödvändiga funktioner och variabler implementeras.
+=======
+# Tamagutchi-with-Vue
+create a play work with different mood
+>>>>>>> 133f335690577155a457addf570a76066bc05035
