@@ -4,18 +4,18 @@
     <div class="turtle-states">
       <pre>
   .-.-.
-  ( {{}} )
+  ( {{tamagotchiState.mood}} )
   (       )
   (     )
   `-.-'
       </pre>
     </div>
-    <p>Name: {{  }}</p>
-    <p>Hunger: {{  }}</p>
-    <p>Happiness: {{  }}</p>
+    <p>Name: {{ name }}</p>
+    <p>Hunger: {{ tamagotchiState.hunger }}</p>
+    <p>Happiness: {{ tamagotchiState.happiness }}</p>
     <div>
-      <button>Feed</button>
-      <button>Play</button>
+      <button @click="feed">Feed</button>
+      <button @click="play">Play</button>
     </div>
     <button>Reset</button>
   </div>
@@ -41,18 +41,37 @@ const mood = {
   angry: '(>_<)',
   exhausted: '(x_x)',
 }
-
 // Define reactive variables
-const tamagotchiState = reactive<TamagotchiState>({});
+const tamagotchiState = reactive<TamagotchiState>({
+  hunger: 0,
+  happiness: 100,
+  mood: mood.happy,
+});
 
 // Method to feed Tamagotchi
-const feed = () => {};
+const feed = () => {
+  tamagotchiState.hunger -= 10;
+  if (tamagotchiState.hunger < 0) tamagotchiState.hunger = 0;
+};
 
 // Method to play with Tamagotchi
-const play = () => {};
+const play = () => {
+  tamagotchiState.happiness +=10;
+  if(tamagotchiState.happiness >100){
+    tamagotchiState.happiness =100;
+  }
+  tamagotchiState.hunger +=10;
+  if(tamagotchiState.hunger >100){
+    tamagotchiState.hunger=100;
+  }
+};
 
 // Method to reset Tamagotchi
-const reset = () => {};
+const reset = () => {
+  tamagotchiState.hunger=0;
+  tamagotchiState.happiness=100;
+  tamagotchiState.mood=mood.happy;
+};
 
 // Lifecycle hooks to simulate the passage of time
 let interval: number;
